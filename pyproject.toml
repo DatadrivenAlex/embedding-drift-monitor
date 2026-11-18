@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "embedding-drift-monitor"
+version = "0.1.0"
+description = "Offline embedding distribution monitoring"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26,<3"]
+[project.optional-dependencies]
+dev = ["pytest>=8,<9", "ruff>=0.6,<1"]
+[project.scripts]
+embedding-drift = "embedding_drift.cli:main"
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+[tool.ruff]
+line-length = 100
